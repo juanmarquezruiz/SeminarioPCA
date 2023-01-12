@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -9,4 +9,13 @@ export class HomePage {
 
   constructor() {}
 
+  @ViewChild('popover')  popover!: { event: Event; };
+
+  isOpen = false;
+  
+presentPopover(e: Event) {
+  this.popover.event = e;
+  this.isOpen = true;
 }
+}
+
