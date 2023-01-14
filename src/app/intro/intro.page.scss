@@ -1,0 +1,30 @@
+ion-content {
+    --background: blue;
+}
+
+ion-slides {
+    background-color: var(--full-solution-color-primary);
+    height: 100%;
+    max-width: 800px;
+}
+
+.swiper-slide {
+    display: block;
+    // background-color: var(--full-solution-color-primary);
+    background-color: blue;
+    margin: 20px 0px 20px 20px;
+    padding: 20px 20px 20px 20px;
+}
+
+ion-slide>h1,
+h2 {
+    color: var( --full-solution-color-h1);
+}
+
+ion-slide>p {
+    font-family: 'Roboto';
+    font-size: 15px;
+    border: solid;
+    border-color: var(--full-solution-color-secondary);
+    padding: 5px 10px 5px 10px;
+}
