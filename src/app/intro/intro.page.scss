@@ -28,3 +28,9 @@ ion-slide>p {
     border-color: var(--full-solution-color-secondary);
     padding: 5px 10px 5px 10px;
 }
+
+ion-slide>ion-icon[name="close"] {
+    float: right;
+    color: var(--the-best-color);
+    font-size: 40px;
+}

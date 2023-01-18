@@ -15,3 +15,18 @@ ionic start
 # npm install --legacy-peer-deps
 
 ionic s
+
+# https://capacitorjs.com/docs/guides/storage
+npm i @capacitor/core
+
+npm i -D @capacitor/cli
+
+npm install @ionic/storage
+npm install @ionic/storage-angular
+
+# creacion de guards
+ionic g guard guards/home
+
+# https://ionicframework.com/docs/layout/css-utilities
+
+# generar pagina login  imports ReactiveFormsModule
