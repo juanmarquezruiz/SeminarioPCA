@@ -33,7 +33,7 @@
         </ion-item>
         <ion-item>
             <ion-label position="floating">Programa/Carrera</ion-label>
-            <ion-select placeholder="Programa/Carrera" formControlName="career">
+            <ion-select formControlName="career">
                 <ion-select-option *ngFor="let item of ListCareer" value="item.display">
                     {{item.display}}
                 </ion-select-option>
