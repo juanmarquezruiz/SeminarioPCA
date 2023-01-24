@@ -1,0 +1,58 @@
+<ion-header>
+    <ion-toolbar>
+        <figure class="size-logo">
+            <img src="https://fulldomus.com/wp-content/uploads/2020/08/fulldomus_logo.png" alt="">
+        </figure>
+        <ion-title>Registro</ion-title>
+        <ion-button (click)="goToLogin()">
+            Volver
+        </ion-button>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <form [formGroup]="registerForm" (ngSubmit)="registerUser(registerForm.value)">
+
+        <ion-item>
+            <ion-label position="floating">Nombre</ion-label>
+            <ion-input placeholder="Introduzca Nombre" formControlName="name"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating">Apellido</ion-label>
+            <ion-input placeholder="Introduzca Apellido" formControlName="last_name"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input placeholder="Introduzca Correo Electrónico" formControlName="email"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input type="password" placeholder="Introduzca Password" formControlName="password"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Programa/Carrera</ion-label>
+            <ion-select placeholder="Programa/Carrera" formControlName="career">
+                <ion-select-option *ngFor="let item of ListCareer" value="item.display">
+                    {{item.display}}
+                </ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Tipo Documento</ion-label>
+            <ion-select formControlName="document_type">
+                <ion-select-option *ngFor="let item of ListDocumentType" value="item.display">
+                    {{item.display}}
+                </ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Numero documento</ion-label>
+            <ion-input placeholder="Introduzca Numero de Documento" formControlName="document_number"> </ion-input>
+        </ion-item>
+        <ion-button shape="round" color="warning" type="submit">
+            Registrarse
+        </ion-button>
+    </form>
+</ion-content>

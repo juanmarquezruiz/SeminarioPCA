@@ -1,10 +1,11 @@
 <ion-content>
+    <figure class="size-logo">
+        <img src="https://fulldomus.com/wp-content/uploads/2020/08/fulldomus_logo.png" alt="">
+    </figure>
     <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)">
         <ion-item fill="solid">
             <ion-label position="floating">Email</ion-label>
             <ion-input formControlName="email"></ion-input>
-            <!-- <ion-note slot="helper">Ingresa aqui tu email</ion-note>
-            <ion-note slot="error">Invalid email</ion-note> -->
         </ion-item>
         <div>
             <ng-container *ngFor="let validation of validation_message.email">
@@ -16,23 +17,27 @@
         <ion-item fill="solid">
             <ion-label position="floating">Password</ion-label>
             <ion-input formControlName="password" type="password"></ion-input>
-            <!-- <ion-note slot="helper">Ingresa aqui tu Password</ion-note>
-            <ion-note slot="error">Minimal leght 8</ion-note> -->
         </ion-item>
         <ng-container *ngFor="let validation of validation_message.password">
             <div *ngIf="loginForm.get('password')?.hasError(validation.type) &&  (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">
                 {{validation.message}}
             </div>
         </ng-container>
-        <ion-button type="submit" [disabled]="!loginForm.valid" color="success" shape="round">
+        <ion-button type="submit" [disabled]="!loginForm.valid" color="success" shape="round" expand="block">
             Login
         </ion-button>
     </form>
+    <br> {{ errorMessage }}
 </ion-content>
+<ion-row>
+    <ion-col class="ion-text-center">
+        <br>
+        <a [routerLink]="['/register']">No estas Registrado?</a>
+    </ion-col>
+</ion-row>
 <ion-footer>
     <ion-toolbar>
         <ion-title>
-            esto es el pie
         </ion-title>
     </ion-toolbar>
 </ion-footer>

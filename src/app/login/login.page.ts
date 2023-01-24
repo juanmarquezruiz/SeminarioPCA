@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { NavController } from '@ionic/angular';
+import { AuthenticateService } from '../services/authenticate.service';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-login',
@@ -20,20 +23,38 @@ export class LoginPage implements OnInit {
       { type: "pattern", message: "No contiene el mínimo de caracteres" }
     ]
   }
-  constructor(private formBuilder: FormBuilder) {
-    this.loginForm = formBuilder.group({
+  errorMessage: any;
+  constructor(private formBuilder: FormBuilder
+    , private authenticate: AuthenticateService
+    , private navCtrl: NavController
+    , private storage: Storage) {
+
+    this.loginForm = this.formBuilder.group({
       email: new FormControl("", Validators.compose([Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")])),
       password: new FormControl("", Validators.compose([Validators.required, Validators.minLength(8)]))
     });
   }
 
   ngOnInit() {
-
+    console.log('login check');
   }
 
   loginUser(data: any) {
     console.log(data);
 
+    this.authenticate.loginUser(data).then(r => {
+      this.errorMessage = "";
+      this.storage.set("isUserLoggedIn", true);
+      this.navCtrl.navigateForward("/menu/home");
+
+    }).catch(e => {
+      this.errorMessage = e;
+    })
+
+  }
+
+  toRegister(){
+    this.navCtrl.navigateBack("register");
   }
 
 }

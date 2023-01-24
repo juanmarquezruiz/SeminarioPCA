@@ -1,5 +1,5 @@
 ion-content {
-    --background: blue;
+    --background: var(--full-solution-color-primary);
 }
 
 ion-slides {
@@ -10,10 +10,9 @@ ion-slides {
 
 .swiper-slide {
     display: block;
-    // background-color: var(--full-solution-color-primary);
-    background-color: blue;
-    margin: 20px 0px 20px 20px;
-    padding: 20px 20px 20px 20px;
+    background-color: var(--full-solution-color-primary);
+    margin: 20px 0px 20px 0px;
+    padding: 10px 10px 10px 10px;
 }
 
 ion-slide>h1,
