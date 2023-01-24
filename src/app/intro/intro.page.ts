@@ -18,7 +18,7 @@ export class IntroPage {
 
   finish() {
     this.storage.set("isIntroShowed", true);
-    this.router.navigateByUrl("/home"); 
+    this.router.navigateByUrl("menu/home"); 
   }
   
   slideOpt = {
