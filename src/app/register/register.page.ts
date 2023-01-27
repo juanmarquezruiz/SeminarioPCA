@@ -45,31 +45,43 @@ export class RegisterPage implements OnInit {
 
   ListDocumentType = [
     {
-      display : "Cédula"
+      display : "Cédula",
+      type: "cc"
     },
     {
-      display : "Tarjeta Identidad"
+      display : "Tarjeta Identidad",
+      type: "ti"
     },
     {
-      display : "Pasaporte"
+      display : "Pasaporte",
+      type: "ps"
     },
     {
-      display : "Otro"
+      display : "Registro Civil",
+      type: "rc"
+    },
+    {
+      display : "Cédula Extrangeria",
+      type: "ce"
     }
   ]
 
   ListCareer = [
     {
-      display : "Ingeniería Sistemas"
+      display : "Ingeniería Sistemas",
+      type: "sistemas"
     },
     {
-      display : "Ingeniería Electronica"
+      display : "Contaduría",
+      type:"contaduria"
     },
     {
-      display : "Ingeniería Industrial"
+      display : "Ingeniería Industrial",
+      type:"industrial"
     },
     {
-      display : "Otro"
+      display : "Administración",
+      type:"administracion"
     }
   ]
 }

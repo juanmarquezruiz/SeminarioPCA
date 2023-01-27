@@ -1,3 +1,7 @@
 {
-    "deepscan.enable": true
+    "deepscan.enable": true,
+    "cSpell.words": [
+        "Contaduria",
+        "Extrangeria"
+    ]
 }
