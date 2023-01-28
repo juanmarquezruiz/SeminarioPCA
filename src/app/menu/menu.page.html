@@ -15,7 +15,6 @@
                 <ion-icon name="home-outline" slot="start"></ion-icon>
                 Inicio
             </ion-item>
-
             <ion-item (click)="goToAuthors()">
                 <ion-icon name="person-outline" slot="start"></ion-icon>
                 Autores
@@ -25,8 +24,10 @@
                 <ion-icon name="book-outline" slot="start"></ion-icon>
                 Libros
             </ion-item>
-
-
+            <ion-item (click)="goToMyFavorites()">
+                <ion-icon name="heart-outline" slot="start"></ion-icon>
+                Mis Favoritos
+            </ion-item>
             <ion-item (click)="logout()">
                 <ion-icon name="log-out" slot="start"></ion-icon>
                 Salir

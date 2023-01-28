@@ -22,6 +22,7 @@ export class MenuPage implements OnInit {
   logout(){
     this.navCtrl.navigateRoot("/login");
   }
+  
   goToAuthors(){
     this.navCtrl.navigateForward("/menu/authors");
     this.menu.close();
@@ -36,5 +37,9 @@ export class MenuPage implements OnInit {
     this.navCtrl.navigateRoot("/menu/books");
     this.menu.close();
   }
-  
+
+  goToMyFavorites(){
+    this.navCtrl.navigateRoot("/menu/favorite-books");
+    this.menu.close();
+  }
 }

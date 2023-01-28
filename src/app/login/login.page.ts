@@ -25,10 +25,10 @@ export class LoginPage implements OnInit {
   }
   errorMessage: any;
   constructor(private formBuilder: FormBuilder
-    , private authenticate: AuthenticateService
-    , private navCtrl: NavController
-    , private storage: Storage
-    , private alertController: AlertController) {
+            , private authenticate: AuthenticateService
+            , private navCtrl: NavController
+            , private storage: Storage
+            , private alertController: AlertController) {
 
     this.loginForm = this.formBuilder.group({
       email: new FormControl("", Validators.compose([Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")])),
