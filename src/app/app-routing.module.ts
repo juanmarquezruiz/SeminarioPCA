@@ -50,6 +50,18 @@ const routes: Routes = [
     path: 'books',
     loadChildren: () => import('./books/books.module').then( m => m.BooksPageModule)
   },
+  {
+    path: 'common-header',
+    loadChildren: () => import('./common-header/common-header.module').then( m => m.CommonHeaderPageModule)
+  },
+  // {
+  //   path: 'favorite-books',
+  //   loadChildren: () => import('./favorite-books/favorite-books.module').then( m => m.FavoriteBooksPageModule)
+  // },
+  {
+    path: 'book-detail-modal',
+    loadChildren: () => import('./book-detail-modal/book-detail-modal.module').then( m => m.BookDetailModalPageModule)
+  },
 ];
 
 @NgModule({

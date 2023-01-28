@@ -55,4 +55,10 @@ export class HomePage {
     this.navCtrl.navigateRoot("/menu/books");
     this.menu.close();
   }
+
+    goToMyFavorites(){
+    this.navCtrl.navigateForward("/menu/favorite-books");
+    this.menu.close();
+  }
+  
 }

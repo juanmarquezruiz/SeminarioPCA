@@ -4,18 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { BooksModalPageRoutingModule } from './books-modal-routing.module';
+import { FavoriteBooksPageRoutingModule } from './favorite-books-routing.module';
 
-import { BooksModalPage } from './books-modal.page';
+import { FavoriteBooksPage } from './favorite-books.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    BooksModalPageRoutingModule
+    FavoriteBooksPageRoutingModule
   ],
-  declarations: [BooksModalPage]
-
+  declarations: [FavoriteBooksPage]
 })
-export class BooksModalPageModule {}
+export class FavoriteBooksPageModule {}

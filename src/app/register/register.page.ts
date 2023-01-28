@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { NavController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
 import { AuthenticateService } from '../services/authenticate.service';
 
 @Component({
@@ -14,6 +14,7 @@ export class RegisterPage implements OnInit {
 
   constructor(private navCtrl: NavController
     , formBuilder: FormBuilder
+    ,private alertController: AlertController
     ,private authenticate: AuthenticateService) {
 
     this.registerForm = formBuilder.group({
@@ -36,52 +37,40 @@ export class RegisterPage implements OnInit {
     this.navCtrl.navigateBack("/login");
   }
 
-  registerUser(data: any) {
-    console.log(data);
-    this.authenticate.registerUser(data).then(() => {
+
+  registerUser(data: any){
+    console.log(data)
+    this.authenticate.registerUser(data).then( res => {
       this.navCtrl.navigateForward("/login");
-    });
+    }).catch(err => {
+      this.presentAlert("Opps", "Hubo un error", err);
+    })
   }
 
+  async presentAlert(header: any, subHeader: any, message: any) {
+    const alert = await this.alertController.create(
+      {
+        header: header,
+        subHeader: subHeader,
+        message: message,
+        buttons: ['Ok']
+      }
+    );
+    await alert.present();
+  }
+  
   ListDocumentType = [
-    {
-      display : "Cédula",
-      type: "cc"
-    },
-    {
-      display : "Tarjeta Identidad",
-      type: "ti"
-    },
-    {
-      display : "Pasaporte",
-      type: "ps"
-    },
-    {
-      display : "Registro Civil",
-      type: "rc"
-    },
-    {
-      display : "Cédula Extrangeria",
-      type: "ce"
-    }
+    { display : "Cédula", type: "cc" },
+    { display : "Tarjeta Identidad", type: "ti" },
+    { display : "Pasaporte", type: "ps" },
+    { display : "Registro Civil", type: "rc" },
+    { display : "Cédula Extrangeria", type: "ce" }
   ]
 
   ListCareer = [
-    {
-      display : "Ingeniería Sistemas",
-      type: "sistemas"
-    },
-    {
-      display : "Contaduría",
-      type:"contaduria"
-    },
-    {
-      display : "Ingeniería Industrial",
-      type:"industrial"
-    },
-    {
-      display : "Administración",
-      type:"administracion"
-    }
+    { display : "Ingeniería Sistemas", type: "sistemas" },
+    { display : "Contaduría", type:"contaduria" },
+    { display : "Ingeniería Industrial", type:"industrial" },
+    { display : "Administración", type:"administracion" }
   ]
 }
