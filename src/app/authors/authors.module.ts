@@ -7,7 +7,6 @@ import { IonicModule } from '@ionic/angular';
 import { AuthorsPageRoutingModule } from './authors-routing.module';
 
 import { AuthorsPage } from './authors.page';
-import { CommonHeaderPageModule } from "../common-header/common-header.module";
 
 @NgModule({
     declarations: [AuthorsPage],
@@ -15,8 +14,7 @@ import { CommonHeaderPageModule } from "../common-header/common-header.module";
         CommonModule,
         FormsModule,
         IonicModule,
-        AuthorsPageRoutingModule,
-        CommonHeaderPageModule
+        AuthorsPageRoutingModule
     ]
 })
 export class AuthorsPageModule {}

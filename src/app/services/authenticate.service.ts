@@ -42,7 +42,8 @@ export class AuthenticateService {
           reject(data.errors)
         }
       }, (error) => {
-        reject("Error en Login")
+        let response = error.error.errors ?? "";
+        reject("Error en Login: "+ JSON.stringify(response))
       })
     })
   }

@@ -34,7 +34,7 @@
         <ion-item>
             <ion-label position="floating">Programa/Carrera</ion-label>
             <ion-select formControlName="career">
-                <ion-select-option *ngFor="let item of ListCareer" value="item.type">
+                <ion-select-option *ngFor="let item of ListCareer" value="{{item.type}}">
                     {{item.display}}
                 </ion-select-option>
             </ion-select>
@@ -42,7 +42,7 @@
         <ion-item>
             <ion-label position="floating">Tipo Documento</ion-label>
             <ion-select formControlName="document_type">
-                <ion-select-option *ngFor="let item of ListDocumentType" value="item.type">
+                <ion-select-option *ngFor="let item of ListDocumentType" value="{{item.type}}">
                     {{item.display}}
                 </ion-select-option>
             </ion-select>

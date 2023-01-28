@@ -28,4 +28,9 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
-@import '~roboto-fontface/css/roboto/roboto-fontface.css'
+@import '~roboto-fontface/css/roboto/roboto-fontface.css';
+// global.scss
+// @import 'swiper/scss';
+// @import '~@ionic/angular/css/ionic-swiper';
+@import '~swiper/swiper.min.css';
+@import '~@ionic/angular/css/ionic-swiper.css';

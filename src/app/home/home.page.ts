@@ -2,6 +2,10 @@ import { Component } from '@angular/core';
 import { MenuController, ModalController, NavController } from '@ionic/angular';
 import { LibraryService } from '../services/library.service';
 import { BooksModalPage } from '../books-modal/books-modal.page';
+import SwiperCore, { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper';
+import { IonicSlides } from '@ionic/angular';
+
+SwiperCore.use([Autoplay, Keyboard, Pagination, Scrollbar, Zoom, IonicSlides]);
 
 @Component({
   selector: 'app-home',
@@ -52,7 +56,7 @@ export class HomePage {
   }
 
   goToBooks(){
-    this.navCtrl.navigateRoot("/menu/books");
+    this.navCtrl.navigateForward("/menu/books");
     this.menu.close();
   }
 
