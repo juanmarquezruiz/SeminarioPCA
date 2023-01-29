@@ -10,6 +10,18 @@
 </ion-header>
 
 <ion-content>
+    <ion-item>
+        <ion-avatar>
+            <img src="{{author.photo}}" class="center" />
+        </ion-avatar>
+    </ion-item>
+    <ion-item *ngFor="let book of listBooks" class="fontRoboto">
+        <ion-icon class="colum1" name="book-sharp"></ion-icon>
+        <ion-label class="colum2">{{book.name}}</ion-label>
+        <!-- <ion-label>{{book.first_publish_year}}</ion-label> -->
+    </ion-item>
+</ion-content>
+<!-- <ion-content>
     <ion-list>
         <ion-item>
             <ion-label>Pokémon Yellow</ion-label>
@@ -27,4 +39,4 @@
             <ion-label>Super Mario World</ion-label>
         </ion-item>
     </ion-list>
-</ion-content>
+</ion-content> -->

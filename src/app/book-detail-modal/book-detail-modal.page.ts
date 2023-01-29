@@ -9,9 +9,12 @@ import { LibraryService } from '../services/library.service';
   styleUrls: ['./book-detail-modal.page.scss'],
 })
 export class BookDetailModalPage implements OnInit {
+
   book: any;
+  
   like_button: boolean = false;
   user_id: any;
+
   constructor( 
     private navParams: NavParams,
     private modalController: ModalController,

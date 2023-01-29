@@ -11,6 +11,7 @@ const httpHeaders = { headers: new HttpHeaders({"Content-Type": "application/jso
 
 export class LibraryService {
   
+  public authors : any;
   
   constructor( private http: HttpClient) { }
 
@@ -23,9 +24,17 @@ export class LibraryService {
   getBooksOffline() {
     return booksOffline;
   }
+  
 
   getBooksAuthor(author_id:any) {
     return fetch(`https://librarypca.fly.dev/books_authors?author_id=${author_id}`).then(
+      books => books.json()
+    )
+  }
+
+  //esta es otra api con datos de libros por autor
+  getBooksAuthorOpenLibraryByName(author_name:any) {
+    return fetch(`https://openlibrary.org/search.json?author=${author_name}&fields=title,first_publish_year&sort=old&limit=25`).then(
       books => books.json()
     )
   }
@@ -64,4 +73,15 @@ export class LibraryService {
     return this.http.post(`${urlServer}dislike`, params, httpHeaders)
   }
 
+  getAuthorDatabyName(author_name:any){
+
+    return fetch(`https://openlibrary.org/search/authors.json?q=${author_name}`).then(
+      author => author.json()
+    )
+
+  }
+
+  GetListTopBooks(){
+    return fetch(`https://librarypca.fly.dev/top_books`).then(list => list.json())
+  }
 }

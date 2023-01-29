@@ -42,6 +42,15 @@ const routes: Routes = [
     path: 'book-detail-modal',
     loadChildren: () => import('./book-detail-modal/book-detail-modal.module').then( m => m.BookDetailModalPageModule)
   },
+  {
+    path: 'topbooks',
+    loadChildren: () => import('./topbooks/topbooks.module').then( m => m.TopbooksPageModule)
+  },
+  {
+    path: 'author-detail-modal',
+    loadChildren: () => import('./author-detail-modal/author-detail-modal.module').then( m => m.AuthorDetailModalPageModule)
+  },
+
   // {
   //   path: 'footer',
   //   loadChildren: () => import('./footer/footer.module').then( m => m.FooterPageModule)
