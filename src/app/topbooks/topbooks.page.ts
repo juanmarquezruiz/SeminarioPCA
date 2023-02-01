@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { BookDetailModalPage } from '../book-detail-modal/book-detail-modal.page';
 import { LibraryService } from '../services/library.service';
 
 @Component({
@@ -11,6 +13,7 @@ export class TopbooksPage implements OnInit {
 listTopBooks : any;  
   
 constructor( private libraryService: LibraryService
+  ,private modalController : ModalController
     ) { }
 
   ngOnInit() {
@@ -23,11 +26,20 @@ constructor( private libraryService: LibraryService
 
   GetListTopBooks(){
     this.libraryService.GetListTopBooks().then((data:any) => {
-      this.listTopBooks =  data //{...data.sort((a:any, b:any) => a.likes >= b.likes)}
+      this.listTopBooks =  data 
       console.log(data)
     })
   }
 
+  async showBook(book: any){
+    const modal = await this.modalController.create({
+      component: BookDetailModalPage,
+      componentProps: {
+        book: book
+      }
+    });
+    return await modal.present();
+  }
 
 
 }

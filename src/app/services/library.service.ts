@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import * as booksOffline from "./books.json";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 const urlServer = "https://librarypca.fly.dev/";
@@ -21,10 +20,6 @@ export class LibraryService {
     );
   }
 
-  getBooksOffline() {
-    return booksOffline;
-  }
-  
 
   getBooksAuthor(author_id:any) {
     return fetch(`https://librarypca.fly.dev/books_authors?author_id=${author_id}`).then(

@@ -22,12 +22,12 @@ export class AuthorsPage implements OnInit {
     })
   }
 
-  async showAuthor(authorId: any){
-    console.log(authorId)
+  async showAuthor(author: any){
+    console.log(author)
      const modal = await this.modalController.create({
        component: AuthorDetailModalPage, //aqui va tu modal
        componentProps: {
-         authorId: authorId
+         author: author
        }
      });
      return await modal.present();

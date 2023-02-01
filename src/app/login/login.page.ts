@@ -53,6 +53,7 @@ export class LoginPage implements OnInit {
   //   })
 
   // }
+  
   loginUser(data: any) {
     console.log(data);
     this.authenticate.loginUser(data).then( (res: any) => {

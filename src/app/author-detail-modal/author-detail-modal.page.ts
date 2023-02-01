@@ -30,9 +30,9 @@ export class AuthorDetailModalPage implements OnInit {
 
   //aqui va mi metodo que trae datos del autor
   getAuthorDatabyName(){
-    this.filterAuthors = this.libraryService.authors.filter((a : any) => 
-    a.id === this.navParams.get("authorId"))[0]
-    console.log(this.filterAuthors)
+    
+    this.filterAuthors = this.navParams.get("author");
+  
   }
 
 }

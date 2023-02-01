@@ -38,8 +38,7 @@ export class HomePage {
       this.libraryService.authors = res;
     })
 
-    this.booksOff = this.libraryService.getBooksOffline();
-    console.log(this.booksOff.books);
+       
   }
 
   async showBooks(author:any) {
