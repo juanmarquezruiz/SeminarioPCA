@@ -22,7 +22,13 @@ export class BookDetailModalPage implements OnInit {
     private libraryService: LibraryService
      ) { }
 
-  async ngOnInit() {
+  ngOnInit() {
+    // TODO document why this method 'ngOnInit' is empty
+  
+ 
+  }
+
+  async ionViewWillEnter(){
     this.book = this.navParams.get("book");
     this.user_id = await this.storage.get("user_id");
     this.libraryService.getCheckLikeBook(this.user_id, this.book.id).subscribe((data:any) =>{

@@ -41,17 +41,13 @@ export class LoginPage implements OnInit {
   }
 
   // loginUser(data: any) {
-  //   console.log(data);
-
   //   this.authenticate.loginUser(data).then(r => {
   //     this.errorMessage = "";
   //     this.storage.set("isUserLoggedIn", true);
   //     this.navCtrl.navigateForward("/menu/home");
-
   //   }).catch(e => {
   //     this.errorMessage = e;
   //   })
-
   // }
   
   loginUser(data: any) {

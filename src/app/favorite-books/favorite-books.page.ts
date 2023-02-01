@@ -20,7 +20,11 @@ export class FavoriteBooksPage implements OnInit {
     private modalController : ModalController
     ) { }
 
-  async ngOnInit() {
+    ngOnInit(){
+
+    }
+
+  async ionViewWillEnter(){
     const user_id = await this.storage.get("user_id");
     this.libraryService.getMyFavoriteBooks(user_id).subscribe((data:any) =>{
       this.my_favorite_books = data
@@ -28,6 +32,7 @@ export class FavoriteBooksPage implements OnInit {
     (error) => 
       this.presentAlert("Opps", "hubo un error", error)
     )
+
   }
 
   async presentAlert(header: any, subHeader: any, message: any) {

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, NavParams } from '@ionic/angular';
-import { LibraryService } from '../services/library.service';
+
 
 @Component({
   selector: 'app-author-detail-modal',
@@ -11,27 +11,30 @@ import { LibraryService } from '../services/library.service';
 export class AuthorDetailModalPage implements OnInit {
  
 
-  filterAuthors : any;
+  AuthorByFilter : any;
 
-    constructor(  private navParams: NavParams, 
-    private modalController: ModalController,
-    private libraryService: LibraryService) { 
+    constructor(  private navParams: NavParams
+    , private modalController: ModalController
+    ) { 
        
     }
 
   ngOnInit() {
-    this.getAuthorDatabyName();
+    // TODO document why this method 'ngOnInit' is empty
+  
+   
   }
 
 
   closeModal(){
     this.modalController.dismiss();
   }
+  
 
   //aqui va mi metodo que trae datos del autor
-  getAuthorDatabyName(){
+  ionViewWillEnter(){
     
-    this.filterAuthors = this.navParams.get("author");
+    this.AuthorByFilter = this.navParams.get("author");
   
   }
 

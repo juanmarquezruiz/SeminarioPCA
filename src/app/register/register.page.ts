@@ -30,7 +30,9 @@ export class RegisterPage implements OnInit {
   }
 
   ngOnInit() {
-    console.log('register into module');
+    // TODO document why this method 'ngOnInit' is empty
+  
+    
   }
 
   goToLogin() {

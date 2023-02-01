@@ -19,7 +19,7 @@
 
 <ion-content>
     <h1 class="ion-text-center">{{book.name}}</h1>
-    <img src="{{book.cover}}" class="cover" />
+    <img src="{{book.cover}}" class="cover" alt="cover de libro" />
     <ion-grid>
         <ion-row>
             <ion-col class="ion-text-center">Paginas</ion-col>
@@ -33,6 +33,6 @@
     <p class="ion-margin ion-text-justify">{{book.resumen}}</p>
     <p class="ion-margin">
         <ion-icon name="calendar-outline"></ion-icon> {{book.published_date}}</p>
-    <p class="ion-margin">Generos:</p>
+    <p class="ion-margin">Géneros:</p>
     <ion-badge *ngFor="let gender of book.genres" class="ion-margin">{{gender}}</ion-badge>
 </ion-content>

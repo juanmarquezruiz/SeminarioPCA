@@ -19,33 +19,13 @@ export class BooksModalPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    // por sincronia no funciona como se espera
-  //  this.libraryService.getBooksAuthor(this.author.id).then((data: any) => {
-  //     this.listBooks = data
-  //     console.log(this.listBooks)
-  //   },
-  //     (error) =>
-  //       console.log(error)
-  //   )
+
   }
 
-  // ionViewWillEnter(){
-    
-  //   this.libraryService.getBooksAuthorOpenLibraryByName(this.author.name).then((data: any) => {
-  //     this.listBooks = data.docs
-  //     this.listBooks = this.listBooks.slice(0,13)
-  //     console.log(this.listBooks)
-  //   },
-  //     (error) =>
-  //       console.log(error)
-  //   )
-  // }
-
-  ionViewWillEnter(){
+   async ionViewWillEnter(){
     this.libraryService.getBooksAuthor(this.author.id).then((data: any) => {
       this.listBooks = data
-      console.log(this.listBooks)
-    },
+     },
       (error) =>
         console.log(error)
     )

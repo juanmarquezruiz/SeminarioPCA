@@ -15,17 +15,23 @@ export class AuthorsPage implements OnInit {
   constructor(private libraryService: LibraryService
     ,private modalController : ModalController ) { }
 
-  ngOnInit() {
-    this.libraryService.getAuthors().then( res => {
+    
+    async ionViewWillEnter() {
+      this.libraryService.getAuthors().then( res => {
       this.authors = res;
-      console.log(this.authors)
     })
+  }
+  
+  
+  ngOnInit(){
+    // TODO document why this method 'ngOnInit' is empty
+  
+
   }
 
   async showAuthor(author: any){
-    console.log(author)
      const modal = await this.modalController.create({
-       component: AuthorDetailModalPage, //aqui va tu modal
+       component: AuthorDetailModalPage, 
        componentProps: {
          author: author
        }

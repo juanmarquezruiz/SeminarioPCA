@@ -17,6 +17,8 @@ constructor( private libraryService: LibraryService
     ) { }
 
   ngOnInit() {
+    // TODO document why this method 'ngOnInit' is empty
+  
     
   }
 
@@ -27,7 +29,6 @@ constructor( private libraryService: LibraryService
   GetListTopBooks(){
     this.libraryService.GetListTopBooks().then((data:any) => {
       this.listTopBooks =  data 
-      console.log(data)
     })
   }
 
