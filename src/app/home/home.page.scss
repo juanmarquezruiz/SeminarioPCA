@@ -9,7 +9,29 @@ ion-avatar img {
     height: 90px;
 }
 
+#color-icon-home {
+    color: var(--full-solution-color-neon1);
+}
+
+ion-card-title {
+    --color: var(--full-solution-color-neon1);
+}
+
+ion-card-subtitle {
+    --color: #d1fff8;
+}
+
+
+/* iOS places the subtitle above the title */
+
+ion-card-header.ios {
+    display: flex;
+    flex-flow: column-reverse;
+}
+
 ion-card {
+    --background: #000;
+    --color: var(--full-solution-color-neon2);
     width: 100%;
     margin: 0;
     padding: 0;

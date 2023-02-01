@@ -1,7 +1,16 @@
 <ion-content>
-    <figure class="size-logo">
-        <img src="https://fulldomus.com/wp-content/uploads/2020/08/fulldomus_logo.png" alt="">
-    </figure>
+    <br><br><br>
+    <div class="ion-text-center">
+        <figure>
+            <img src="https://pca.edu.co/wp/wp-content/uploads/2020/07/logo-pca-small.png" alt="">
+        </figure>
+        <ion-text color="tertiary">
+            <h3>
+                Biblioteca Digital
+            </h3>
+        </ion-text>
+        <br><br><br>
+    </div>
     <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)">
         <ion-item fill="solid">
             <ion-label position="floating">Email</ion-label>
@@ -23,7 +32,7 @@
                 {{validation.message}}
             </div>
         </ng-container>
-        <ion-button type="submit" [disabled]="!loginForm.valid" color="success" shape="round" expand="block">
+        <ion-button type="submit" [disabled]="!loginForm.valid" color="tertiary" shape="round" expand="block">
             Login
         </ion-button>
     </form>
@@ -38,7 +47,9 @@
 
 <ion-footer [translucent]="true">
     <ion-toolbar>
-        <ion-icon slot="code-working-outline"></ion-icon>
-        <ion-title>Desarrollado por JuanMarquez_Dev 2023 &copy;</ion-title>
+        <ion-icon name="code-working-outline" slot="start"></ion-icon>
+        <ion-title style="font-size: 12px;">Desarrollado por JuanMarquez_Dev 2023 &copy;
+        </ion-title>
+
     </ion-toolbar>
 </ion-footer>
