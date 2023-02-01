@@ -30,22 +30,19 @@ export class IntroPage {
 
   slides = [
     {
-      title1: "FULLSOLUTION",
-      title2: "ONU XPON",
-      imagin: this.JpgBase64.OnuClient,
-      texto: "ONU XPON FD-HG8410C 1GE+3FE+WIFI 2.4G 5 dBi+CATV 1GE+3FE+WIFI 2.4G 5 dBi+CATV Dual EPON/GPON DL (↓) 2.5 Gbps UL (↑) 1.25Gbps WLAN IEEE 802.11 b/g/n (2T2R)"
+      title1: "Ficha de Autor",
+      imagin: this.JpgBase64.Autor,
+      texto: "Información completa de Autor, con contador de popularidad."
     },
     {
-      title1: "FULLSOLUTION",
-      title2: "PATCH CORD",
-      imagin: this.JpgBase64.OnuClient,
-      texto: "Cable de conexión también llamado cable de red, se usa en redes de computadoras o sistemas informáticos o electrónicos para conectar un dispositivo electrónico con otro.Está compuesto por cobre y cubierto de plástico."
+      title1: "Menu de Opciones",
+      imagin: this.JpgBase64.menu,
+      texto: "Tendrás un vistoso menu, para consultar tu autor o tu libro, con opción para marcarlo como tu favorito."
     },
     {
-      title1: "FULLSOLUTION",
-      title2: "AMPLIFICADOR OPTICO",
-      imagin: this.JpgBase64.OnuClient,
-      texto: "YEDFA 16 X 22dBm+WDM SCAPC-SCUPC Chasis 2U 16 Canales x 22 dBm BUILT-IN WDM SCAPC-SCUPC"
+      title1: "Registro a la Aplicación",
+      imagin: this.JpgBase64.registro,
+      texto: "Podrás registrarte gratuitamente en la sección de registro."
     }
   ]
 
