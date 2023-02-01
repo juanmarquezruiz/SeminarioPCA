@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MenuController, ModalController, NavController , IonicSlides} from '@ionic/angular';
+import { MenuController, ModalController, NavController , IonicSlides, LoadingController} from '@ionic/angular';
 import { LibraryService } from '../services/library.service';
 import { BooksModalPage } from '../books-modal/books-modal.page';
 import SwiperCore, { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper';
@@ -29,9 +29,12 @@ export class HomePage {
     private navCtrl: NavController,
     private menu: MenuController
   ) { }
-
   ionViewDidEnter(){
 
+  }
+
+  ionViewWillEnter(){
+ 
     this.libraryService.getAuthors().then( res => {
       this.authors = res;
       this.libraryService.authors = res;

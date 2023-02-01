@@ -21,7 +21,7 @@ export class AuthorDetailModalPage implements OnInit {
 
   ngOnInit() {
     // TODO document why this method 'ngOnInit' is empty
-  
+    this.AuthorByFilter = this.navParams.get("SelectAuthor");
    
   }
 
@@ -34,7 +34,7 @@ export class AuthorDetailModalPage implements OnInit {
   //aqui va mi metodo que trae datos del autor
   ionViewWillEnter(){
     
-    this.AuthorByFilter = this.navParams.get("author");
+   
   
   }
 

@@ -1,12 +1,18 @@
 <ion-header>
     <ion-toolbar>
-        <figure class="size-logo">
-            <img src="https://fulldomus.com/wp-content/uploads/2020/08/fulldomus_logo.png" alt="">
-        </figure>
-        <ion-title>Registro</ion-title>
-        <ion-button (click)="goToLogin()">
-            Volver
-        </ion-button>
+        <div class="ion-text-center">
+            <figure>
+                <img src="https://pca.edu.co/wp/wp-content/uploads/2020/07/logo-pca-small.png" alt="">
+            </figure>
+            <ion-item>
+                <ion-button size="small" fill="outline" (click)="goToLogin()" slot="start" color="tertiary">
+                    Volver
+                </ion-button>
+                <ion-title>Registro</ion-title>
+            </ion-item>
+
+        </div>
+
     </ion-toolbar>
 </ion-header>
 
@@ -51,8 +57,10 @@
             <ion-label position="floating">Numero documento</ion-label>
             <ion-input placeholder="Introduzca Numero de Documento" formControlName="document_number"> </ion-input>
         </ion-item>
-        <ion-button shape="round" color="warning" type="submit">
-            Registrarse
-        </ion-button>
+        <div class="ion-text-center">
+            <ion-button shape="round" color="tertiary" type="submit">
+                Registrarse
+            </ion-button>
+        </div>
     </form>
 </ion-content>
